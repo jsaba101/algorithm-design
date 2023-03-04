@@ -7,7 +7,7 @@ class Human: public Player {
     public:
         Human();
         Human(std::string hname);
-        char makeMove();
-        std::string getName();
+        virtual char makeMove();
+        virtual std::string getName();
 };
 #endif

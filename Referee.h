@@ -7,5 +7,7 @@ class Referee: public Player{
     public:
     Referee( );
     Player * refGame(Player * player1, Player * player2);
+    virtual char makeMove();
+    virtual std::string getName();
 };
 #endif

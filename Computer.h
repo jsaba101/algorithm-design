@@ -6,7 +6,7 @@
 class Computer: public Player {
     public:
         Computer();
-        char makeMove();
-        std::string getName();
+        virtual char makeMove();
+        virtual std::string getName();
 };
 #endif
