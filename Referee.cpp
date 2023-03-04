@@ -30,5 +30,4 @@ Player * Referee::refGame(Player * player1, Player * player2){
         cout << "Tie ";
         return nullptr;
     }
-    return NULL;
 }
