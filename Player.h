@@ -8,6 +8,6 @@ class Player {
         char move;
         std::string name;
         char makeMove( );
-        virtual std::string getName( ) = 0;
+        std::string getName( );
 };
 #endif
