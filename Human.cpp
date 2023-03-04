@@ -4,7 +4,7 @@
 using namespace std;
 
 Human::Human(){
-    name = "Human";
+    this->name = "Human";
 }
 
 Human::Human(string hname){
