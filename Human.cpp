@@ -11,10 +11,10 @@ Human::Human(string hname){
     this->name = hname;
 }
 
-char Player::makeMove(){
+char Human::makeMove(){
     cout << "Enter Move: ";
     cin >> move;
     return move;
 }
 
-string Player::getName() { return name; }
+string Human::getName() { return name; }

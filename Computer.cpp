@@ -7,9 +7,9 @@ Computer::Computer(){
     name = "Computer";
 }
 
-char Player::makeMove(){
+char Computer::makeMove(){
     move = 'R';
     return move;
 }
 
-string Player::getName(){ return name; }
+string Computer::getName(){ return name; }

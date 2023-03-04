@@ -7,7 +7,7 @@ class Player {
         public:
         char move;
         std::string name;
-        char makeMove( );
-        std::string getName( );
+        virtual char makeMove( ) = 0;
+        virtual std::string getName( ) = 0;
 };
 #endif
