@@ -8,7 +8,7 @@ class Player {
         char move;
         std::string name;
         //pure virtual functions to make class abstract
-        virtual char makeMove() = 0;
-        virtual std::string getName() = 0;
+        virtual char makeMove();
+        virtual std::string getName();
 };
 #endif
