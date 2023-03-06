@@ -1,13 +1,16 @@
 #include "Referee.h"
-#include <string>
 #include <iostream>
+
 using namespace std;
 
 Referee::Referee(){} 
 
+//Plays game between two players
 Player * Referee::refGame(Player * player1, Player * player2){
+    //Asks for move from both players
     char player1move = player1->makeMove();
     char player2move = player2->makeMove();
+    //If statements to test which player won than prints winner in terminal
     if (player1move == 'R' && player2move == 'S'){
         return player1;
     }
@@ -26,6 +29,7 @@ Player * Referee::refGame(Player * player1, Player * player2){
     else if (player2move == 'S' && player1move == 'P'){
         return player2;
     }
+    //If both players played same move, prints tie in terminal and returns null pointer
     else if (player1move == player2move){
         cout << "Tie " << endl;
         return nullptr;

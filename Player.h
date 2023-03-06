@@ -1,13 +1,14 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-#include <iostream>
 #include <string>
 
+//creates abstract class player
 class Player {
         public:
         char move;
         std::string name;
-        virtual char makeMove();
-        virtual std::string getName();
+        //pure virtual functions to make class abstract
+        virtual char makeMove() = 0;
+        virtual std::string getName() = 0;
 };
 #endif

@@ -1,12 +1,14 @@
 #ifndef COMPUTER_H
 #define COMPUTER_H
 #include "Player.h"
-#include <iostream>
+#include <string>
 
+//Computer class that inherits public from player
 class Computer: public Player {
     public:
+        //default computer constructor
         Computer();
-        virtual char makeMove();
-        virtual std::string getName();
+        char makeMove();
+        std::string getName();
 };
 #endif
