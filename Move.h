@@ -5,7 +5,7 @@
 
 class Move{
     public:
-        char makeMove();
+        std::string name;
         std::string getName();
 };
 #endif

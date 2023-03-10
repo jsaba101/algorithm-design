@@ -5,6 +5,8 @@
 
 class Player: public Move {
     public:
+        std::string move;
+        std::string name;
         Move * makeMove();
         virtual std::string getName() = 0;
 };
