@@ -5,9 +5,9 @@
 
 class Player{
     public:
-        std::string move;
+        Move* move;
         std::string name;
-        Move * makeMove();
-        virtual std::string getName() = 0;
+        virtual Move * makeMove() = 0;
+        std::string getName();
 };
 #endif
