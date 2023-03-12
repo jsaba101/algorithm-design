@@ -5,18 +5,6 @@
 using namespace std;
 
 Ninja::Ninja(){
-    this->name = "Ninja";
-}
-
-string Ninja::getName(){;
-    return name;
-}
-
-bool Ninja::Outcome(string name){
-    if (name == "Pirate" || name == "Zombie"){
-        return true;
-    }
-    else {
-        return false;
-    }
+    setName("Ninja");
+    setBeatMoves({"Pirate", "Zombie"});
 }

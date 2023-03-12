@@ -7,7 +7,5 @@
 class Rock: public Move {
     public:
         Rock();
-        std::string getName();
-        bool Outcome(std::string name);
 };
 #endif

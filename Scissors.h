@@ -6,7 +6,5 @@
 class Scissors: public Move {
     public:
         Scissors();
-        std::string getName();
-        bool Outcome(std::string name);
 };
 #endif

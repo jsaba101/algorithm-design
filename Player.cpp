@@ -4,7 +4,7 @@
 using namespace std;
 
 Move * Player::makeMove(){
-    
+    return move;
 }
 
 string Player::getName(){

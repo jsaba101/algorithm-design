@@ -6,7 +6,5 @@
 class Pirate: public Move {
     public:
         Pirate();
-        std::string getName();
-        bool Outcome(std::string name);
 };
 #endif

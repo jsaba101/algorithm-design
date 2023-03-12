@@ -3,7 +3,7 @@
 
 #include "Move.h"
 
-class Player: public Move {
+class Player{
     public:
         std::string move;
         std::string name;

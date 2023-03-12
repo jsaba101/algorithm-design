@@ -6,7 +6,5 @@
 class Robot: public Move {
     public:
         Robot();
-        std::string getName();
-        bool Outcome(std::string name);
 };
 #endif

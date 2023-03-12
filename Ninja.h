@@ -6,7 +6,5 @@
 class Ninja: public Move {
     public:
         Ninja();
-        std::string getName();
-        bool Outcome(std::string name);
 };
 #endif

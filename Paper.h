@@ -7,7 +7,5 @@
 class Paper: public Move {
     public:
         Paper();
-        std::string getName();
-        bool Outcome(std::string name);
 };
 #endif

@@ -9,8 +9,8 @@ Human::Human(){
     this->name = "Human";
 }
 
-Human::Human(string name){
-    this->name = name;
+Human::Human(string hname){
+    this->name = hname;
 }
 
 Move * Human::makeMove(){
