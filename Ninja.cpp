@@ -6,5 +6,5 @@ using namespace std;
 
 Ninja::Ninja(){
     setName("Ninja");
-    setBeatMoves({"Pirate", "Zombie"});
+    setWinMoves({"Pirate", "Zombie"});
 }

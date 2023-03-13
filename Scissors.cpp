@@ -6,5 +6,5 @@ using namespace std;
 
 Scissors::Scissors(){
     setName("Scissors");
-    setBeatMoves({"Paper"});
+    setWinMoves({"Paper"});
 }

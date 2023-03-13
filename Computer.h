@@ -5,6 +5,8 @@
 
 class Computer: public Player {
     public:
+        //creates default computer constructor and inherits makeMove
+        //from player
         Computer();
         Move * makeMove();
 };

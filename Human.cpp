@@ -1,3 +1,4 @@
+//includes human and all move subclasses
 #include "Human.h"
 #include "Rock.h"
 #include "Scissors.h"
@@ -13,14 +14,17 @@
 
 using namespace std;
 
+//default constructor sets name as human
 Human::Human(){
     this->name = "Human";
 }
-
+//human constructor takes name and sets name as input
 Human::Human(string hname){
     this->name = hname;
 }
 
+//gets input from human and depending on input, sets move
+//as input
 Move * Human::makeMove(){;
   string input;;
   cout << "Make move ";

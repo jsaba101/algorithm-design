@@ -6,5 +6,5 @@ using namespace std;
 
 Pirate::Pirate(){
     setName("Pirate");
-    setBeatMoves({"Robot", "Monkey"});
+    setWinMoves({"Robot", "Monkey"});
 }

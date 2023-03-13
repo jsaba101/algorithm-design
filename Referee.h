@@ -6,7 +6,9 @@
 
 class Referee{
     public:
+        //sets referee default constructor
         Referee();
+        //pointer function that referees a game
         Player * refGame(Player * player1, Player * player2);
 };
 #endif

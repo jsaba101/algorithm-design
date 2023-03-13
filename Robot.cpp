@@ -6,5 +6,5 @@ using namespace std;
 
 Robot::Robot(){
     setName("Robot");
-    setBeatMoves({"Ninja", "Zombie"});
+    setWinMoves({"Ninja", "Zombie"});
 }

@@ -6,6 +6,8 @@
 
 class Human: public Player {
     public:
+        //creates default human constructor, human constructor, 
+        //and inherits makeMove from player
         Human();
         Human(std::string hname);
         Move * makeMove();

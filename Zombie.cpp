@@ -6,5 +6,5 @@ using namespace std;
 
 Zombie::Zombie(){
     setName("Zombie");
-    setBeatMoves({"Pirate", "Monkey"});
+    setWinMoves({"Pirate", "Monkey"});
 }

@@ -6,5 +6,5 @@ using namespace std;
 
 Paper::Paper(){
     setName("Paper");
-    setBeatMoves({"Rock"});
+    setWinMoves({"Rock"});
 }
