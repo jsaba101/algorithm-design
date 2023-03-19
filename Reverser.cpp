@@ -11,6 +11,9 @@ int Reverser::reverseDigit(int n){
     if (n == 0){
         return 0;
     }
+    else if (n < 0){
+        return -1;
+    }
     //otherwise recursively calls function
     return ((n % 10 * pow(10, integer)) + reverseDigit(n / 10));
 }
