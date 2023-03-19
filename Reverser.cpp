@@ -8,7 +8,7 @@ using namespace std;
 int Reverser::reverseDigit(int n){
     int integer = log10(n);
     //checks if number is less than 1 and returns 0;
-    if (n < 1){
+    if (n == 0){
         return 0;
     }
     //otherwise recursively calls function
