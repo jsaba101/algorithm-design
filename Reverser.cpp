@@ -14,6 +14,9 @@ int Reverser::reverseDigit(int n){
         reverse = reverse * 10 + base;
         reverseDigit(n/10);
     }
+    else {
+        return n;
+    }
     //otherwise returns number
     return n;
 }
