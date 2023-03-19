@@ -1,24 +1,18 @@
 #include "Reverser.h"
 #include <string>
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
 int Reverser::reverseDigit(int n){
-    //creates base and reverse variables
-    int base;
-    int reverse;
-    //checks if number is greater than 9 and reverses number
-    if (n > 9){
-        base = n % 10;
-        reverse = reverse * 10 + base;
-        reverseDigit(n/10);
+    int integer = log10(n);
+    //checks if number is less than 1 and returns 0;
+    if (n < 1){
+        return 0;
     }
-    else {
-        return n;
-    }
-    //otherwise returns number
-    return n;
+    //otherwise recursively calls function
+    return ((n % 10 * pow(10, integer)) + reverseDigit(n / 10));
 }
 
 string Reverser::reverseString(string input){
