@@ -6,11 +6,11 @@ using namespace std;
 
 int Reverser::reverseDigit(int n){
     int integer = log10(n);
-    //checks if number is less than 0 and returns -1;
+    //checks if number is less than 0 and returns -1 if true
     if (n < 0){
         return -1;
     }
-    //checks if n is less than 10 and returns input
+    //checks if n is less than 10 and returns input if true
     else if (n < 10){
         return n;
     }
@@ -20,7 +20,7 @@ int Reverser::reverseDigit(int n){
 }
 
 string Reverser::reverseString(string input){
-    //checks if string is less than 2 in length and returns it
+    //checks if string is less than 2 in length and returns input if true
     if (input.size() < 2){
         return input;
     }
