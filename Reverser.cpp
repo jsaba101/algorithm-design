@@ -24,6 +24,6 @@ string Reverser::reverseString(string input){
     if (input.size() < 2){
         return input;
     }
-    //otherwise reverses string by eraseing start of string and adding start to end of string
+    //otherwise reverses string by erasing start of string and adding start to end of string
     return reverseString(input.erase(0,1)) + input[0];
 }
