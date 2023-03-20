@@ -3,7 +3,7 @@
 
 #include <string>
 
-//creates class called reverser
+//creates class called Reverser
 class Reverser{
     public:
         //function that reverses number
