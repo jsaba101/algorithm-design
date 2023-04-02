@@ -15,7 +15,11 @@
                 index = found;
             } else {
                 result.push_back(-1);
+                break;
             }
+        }
+        for (size_t j = 0; j <= s2.size() - result.size(); j++){
+            result.push_back(-1);
         }
         return result;
     }
