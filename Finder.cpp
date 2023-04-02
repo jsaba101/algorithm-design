@@ -18,7 +18,7 @@
                 break;
             }
         }
-        for (size_t j = 0; j <= s2.size() - result.size(); j++){
+        for (size_t j = 1; j <= s2.size() - result.size(); j++){
             result.push_back(-1);
         }
         return result;
