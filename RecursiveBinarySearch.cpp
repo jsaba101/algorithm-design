@@ -21,4 +21,5 @@ bool RecursiveBinarySearch::searcher(vector<int> list, int number, int start, in
     } if (list[middle] < number) {
         return searcher(list, number, end, middle + 1);
     }
+    return false;
 }
