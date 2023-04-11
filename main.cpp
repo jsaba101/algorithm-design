@@ -13,7 +13,6 @@ int main(){
     RecursiveBinarySearch r1;
 
     vector<int> list;
-    vector<int> sorted = q1.sort(list);
 
     int value;
     string line;
@@ -23,8 +22,10 @@ int main(){
         list.push_back(value);
     }
 
-    bool belongs = r1.search(sorted, 1);
-    if (belongs == true){
+    vector<int> sorted = q1.sort(list);
+
+    int belongs = r1.search(sorted, 1);
+    if (belongs >= 0){
         cout << "true" << " ";
     } else {
         cout << "false" << " ";

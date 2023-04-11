@@ -4,22 +4,23 @@ using namespace std;
 
 bool RecursiveBinarySearch::search(vector<int> list, int number){
     int start = list.at(0);
-    int end = list.size();
-    bool value = searcher(list, number, start, end - 1);
+    int end = list.size() - 1;
+    bool value = searcher(list, number, start, end);
     return value;
 }
 
 bool RecursiveBinarySearch::searcher(vector<int> list, int number, int start, int end){
     int middle = (start + end)/2;
 
-    if (list[middle] == number){
-        return true;
+    if (start > end){
+        return false;
     }
 
-    if (list[middle] > number){
+    if (list.at(middle) > number){
         return searcher(list, number, start, middle - 1);
-    } if (list[middle] < number) {
-        return searcher(list, number, end, middle + 1);
+    } else if (list.at(middle) < number) {
+        return searcher(list, number, middle + 1, end);
+    } else {
+        return true;
     }
-    return false;
 }
