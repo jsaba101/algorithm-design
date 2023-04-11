@@ -3,9 +3,9 @@
 using namespace std;
 
 vector<int> QuickSort::sort(vector<int> list){
-    int start = list[0];
-    int end = list.size() - 1;
-    sorted = sorter(list, start, end);
+    int start = list.at(0);
+    int end = list.size();
+    vector<int> sorted = sorter(list, start, end - 1);
     return sorted;
 }
 
@@ -28,8 +28,11 @@ vector<int> QuickSort::sorter(vector<int> list, int start, int end){
             pivot_index++;
         }
     }
-    swap(pivot_index, pivot);
+    swap(list.at(pivot_index), list.at(pivot));
 
-    return sorter(list, start, pivot_index - 1);
-    return sorter(list, pivot_index + 1, end);
+    if (pivot_index > start){
+        return sorter(list, start, pivot_index - 1);
+    } else if (pivot_index < end){
+        return sorter(list, pivot_index + 1, end);
+    }   
 }

@@ -3,9 +3,9 @@
 using namespace std;
 
 bool RecursiveBinarySearch::search(vector<int> list, int number){
-    int start = list[0];
-    int end = list.size() - 1;
-    value = searcher(list, number, start, end);
+    int start = list.at(0);
+    int end = list.size();
+    bool value = searcher(list, number, start, end - 1);
     return value;
 }
 
@@ -18,7 +18,7 @@ bool RecursiveBinarySearch::searcher(vector<int> list, int number, int start, in
 
     if (list[middle] > number){
         return searcher(list, number, start, middle - 1);
-    } else {
+    } if (list[middle] < number) {
         return searcher(list, number, end, middle + 1);
     }
 }

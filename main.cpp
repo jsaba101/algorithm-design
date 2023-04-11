@@ -11,20 +11,24 @@ using namespace std;
 int main(){
     QuickSort q1;
     RecursiveBinarySearch r1;
+
     vector<int> list;
+    vector<int> sorted = q1.sort(list);
+
     int value;
     string line;
-
-    cout << "Enter values separated by a space: ";
     getline(cin, line);
     istringstream ss(line);
     while (ss >> value){
         list.push_back(value);
     }
 
-    vector<int> sorted = q1.sort(list);
     bool belongs = r1.search(sorted, 1);
-    cout << belongs << " ";
+    if (belongs == true){
+        cout << "true" << " ";
+    } else {
+        cout << "false" << " ";
+    }
     for (int i = 0; i < sorted.size(); i++){
         cout << sorted[i] << " ";
     }
