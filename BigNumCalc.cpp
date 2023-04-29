@@ -4,17 +4,13 @@
 using namespace std;
 
 BigNumCalc::BigNumCalc(){
-    head = nullptr;
+    
 }
 
 BigNumCalc::~BigNumCalc(){}
 
 list<int> BigNumCalc::buildBigNum(string numString){
-    if (numString.size() == 0){
-        return;
-    }
-
-    Node *currNode = head;
+    
 }
 
 list<int> BigNumCalc::add(list<int> num1, list<int> num2){
