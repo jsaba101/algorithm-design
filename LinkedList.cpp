@@ -12,7 +12,6 @@ LinkedList::LinkedList(){
 
 LinkedList::LinkedList(int* array, int len){
     list<int> newList;
-    Node *head = NULL;
     for (int i = 0; i < len; i++){
         insertPosition(i, array[i]);
     }
