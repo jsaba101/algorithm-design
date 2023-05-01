@@ -10,32 +10,30 @@ LinkedList::LinkedList(){
 }
 
 LinkedList::LinkedList(int* array, int len){
+    list<int> newList;
     head = NULL;
     for (int i = 0; i < len; i++){
-        insertPosition(i, array[i]);
+        newList.push_back(array[i]);
     }
 }
 
 LinkedList::~LinkedList(){
     while (head != nullptr){
-        deletePosition(0);
+        Node* temp = head;
+        head = head->link;
+        free(temp);
     }
 }
 
 void LinkedList::printList(){
-    if (head == nullptr){
-        return;
-    }
-    else {
-        Node* currNode = head;
+    Node* currNode = head;
 
-        cout << "[ ";
-        while (currNode != nullptr){
-            cout << currNode->data;
-            currNode = currNode->link;
-        }
-        cout << " ]" << endl;
+    cout << "[ ";
+    while (currNode != nullptr){
+        cout << currNode->data;
+        currNode = currNode->link;
     }
+    cout << " ]" << endl;
 }
 
 Node* LinkedList::traverse(int index){
