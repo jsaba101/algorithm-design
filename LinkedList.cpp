@@ -37,7 +37,7 @@ void LinkedList::printList(){
 
     cout << "[";
     while (currNode != nullptr){
-        cout << currNode->data ;
+        cout << currNode->data << endl;
         currNode = currNode->link;
     }
     cout << "]" << endl;
