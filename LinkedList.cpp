@@ -10,11 +10,12 @@ LinkedList::LinkedList(){
 }
 
 LinkedList::LinkedList(int* array, int len){
-    head->data = array[0];
-    Node *currNode = head;
+    Node *tail = NULL;
     for (int i = 0; i < len; i++){
-        currNode = new Node(array[i], currNode->link);
-        traverse(i+1);
+        Node *currNode;
+        currNode->data = array[len - 1 - i];
+        currNode->link = tail;
+        tail = currNode;
     }
 }
 
