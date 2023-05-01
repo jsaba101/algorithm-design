@@ -7,11 +7,10 @@ using namespace std;
 
 LinkedList::LinkedList(){
     list<int> newList;
-    head = nullptr;
 }
 
 LinkedList::LinkedList(int* array, int len){
-    list<int> newList;
+    head = NULL;
     for (int i = 0; i < len; i++){
         insertPosition(i, array[i]);
     }
@@ -19,7 +18,7 @@ LinkedList::LinkedList(int* array, int len){
 
 LinkedList::~LinkedList(){
     while (head != nullptr){
-        deletePosition(1);
+        deletePosition(0);
     }
 }
 
@@ -52,18 +51,18 @@ Node* LinkedList::traverse(int index){
 }
 
 void LinkedList::insertPosition(int pos, int newNum){
-    Node *newNode = new Node(newNum, NULL);
+    if (pos == 0){
+        head = new Node(newNum, head);
+        return;
+    }
+
     Node *prevNode = traverse(pos-1);
 
-    if (pos <= 1){
-        head = newNode;
+    if (prevNode == nullptr) {
+        return;
     }
-    else if (prevNode->link == nullptr){
-        prevNode->link = newNode;
-    }
-    
-    newNode->link = prevNode->link;
-    prevNode->link = newNode;    
+    Node *newNode = new Node(newNum, prevNode->link);
+    prevNode->link = newNode;
 }
 
 bool LinkedList::deletePosition(int pos){
