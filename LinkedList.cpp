@@ -7,6 +7,7 @@ using namespace std;
 
 LinkedList::LinkedList(){
     list<int> newList;
+    head = nullptr;
 }
 
 LinkedList::LinkedList(int* array, int len){
