@@ -28,7 +28,7 @@ LinkedList::~LinkedList(){
     while (head != nullptr){
         Node* temp = head;
         head = head->link;
-        free(temp);
+        delete temp;
     }
 }
 
@@ -61,17 +61,18 @@ Node* LinkedList::traverse(int index){
 }
 
 void LinkedList::insertPosition(int pos, int newNum){
-    if (pos == 0){
+    if (pos <= 1){
         head = new Node(newNum, head);
         return;
     }
 
     Node *prevNode = traverse(pos-1);
+    Node *newNode = new Node(newNum, prevNode->link);
 
-    if (prevNode == nullptr) {
+    if (prevNode == nullptr){
+        prevNode = newNode;
         return;
     }
-    Node *newNode = new Node(newNum, prevNode->link);
     prevNode->link = newNode;
 }
 
@@ -94,7 +95,7 @@ bool LinkedList::deletePosition(int pos){
 int LinkedList::get(int pos){
     Node *getNode = traverse(pos);
     if (getNode->link == nullptr){
-        cout << numeric_limits < int >::max() << "\n";
+        cout << std::numeric_limits < int >::max() << "\n";
     }
     int data = getNode->data;
     return data;
