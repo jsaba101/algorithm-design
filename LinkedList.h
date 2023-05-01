@@ -22,4 +22,4 @@ class LinkedList{
 
         friend class BigNumCalc;
 };
-#endif;
+#endif
