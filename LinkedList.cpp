@@ -93,12 +93,13 @@ bool LinkedList::deletePosition(int pos){
 }
 
 int LinkedList::get(int pos){
-    Node *getNode = traverse(pos);
+    Node *getNode = traverse(pos-1);
     if (getNode->link == nullptr){
         cout << std::numeric_limits < int >::max() << "\n";
+    } else {
+        int data = getNode->data;
+        return data;
     }
-    int data = getNode->data;
-    return data;
 }
 
 int LinkedList::search(int target){
