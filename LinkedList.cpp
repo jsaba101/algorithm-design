@@ -35,12 +35,15 @@ LinkedList::~LinkedList(){
 void LinkedList::printList(){
     Node* currNode = head;
 
-    cout << "[ ";
+    cout << "[";
     while (currNode != nullptr){
-        cout << currNode->data;
+        cout << currNode->data << " ";
         currNode = currNode->link;
+        if (currNode == nullptr){
+            cout << currNode->data;
+        }
     }
-    cout << " ]" << endl;
+    cout << "]" << endl;
 }
 
 Node* LinkedList::traverse(int index){
