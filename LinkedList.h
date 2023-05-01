@@ -6,6 +6,7 @@
 class LinkedList{
     private:
         Node* head;
+        Node* traverse(int index);
     public:
         LinkedList();
         LinkedList(int* array, int len);
@@ -16,11 +17,9 @@ class LinkedList{
 
         int get(int pos);
         int search(int target);
-        Node* traverse(unsigned int index);
 
         void printList();
 
         friend class BigNumCalc;
-
 };
 #endif;
