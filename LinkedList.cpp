@@ -66,7 +66,7 @@ void LinkedList::insertPosition(int pos, int newNum){
         return;
     }
 
-    Node *prevNode = traverse(pos-1);
+    Node *prevNode = traverse(pos-2);
     Node *newNode = new Node(newNum, prevNode->link);
 
     if (prevNode == nullptr){
@@ -77,7 +77,7 @@ void LinkedList::insertPosition(int pos, int newNum){
 }
 
 bool LinkedList::deletePosition(int pos){
-    Node *prevNode = traverse(pos-1);
+    Node *prevNode = traverse(pos-2);
 
     if (prevNode->link == nullptr){
         return false;
