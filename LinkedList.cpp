@@ -40,7 +40,7 @@ void LinkedList::printList(){
         cout << currNode->data << endl;
         currNode = currNode->link;
     }
-    cout << "]" << endl;
+    cout << "]";
 }
 
 Node* LinkedList::traverse(int index){
