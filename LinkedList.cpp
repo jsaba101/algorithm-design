@@ -37,10 +37,11 @@ void LinkedList::printList(){
 
     cout << "[";
     while (currNode != nullptr){
-        cout << currNode->data << " ";
-        currNode = currNode->link;
         if (currNode == nullptr){
             cout << currNode->data;
+        } else {
+            cout << currNode->data << " ";
+            currNode = currNode->link;
         }
     }
     cout << "]" << endl;
