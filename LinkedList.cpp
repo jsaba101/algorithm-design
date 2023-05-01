@@ -35,6 +35,10 @@ LinkedList::~LinkedList(){
 void LinkedList::printList(){
     Node* currNode = head;
 
+    if (head == nullptr){
+        return;
+    }
+
     cout << "[";
     while (currNode != nullptr){
         if (currNode->link == nullptr){
@@ -113,7 +117,7 @@ int LinkedList::search(int target){
     for (int i = 0; i < counter; i++){
         Node *targetNode = traverse(i);
         if (targetNode->data == target){
-            return target;
+            return i;
         }
     }
 
