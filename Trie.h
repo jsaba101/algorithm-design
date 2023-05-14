@@ -8,6 +8,7 @@ class Trie{
         bool isEndOfWord;
         std::vector<Trie *> children;
         Trie();
+        Trie* getNode();
     public:
         friend class Autocomplete;
         friend class PrefixMatcher;

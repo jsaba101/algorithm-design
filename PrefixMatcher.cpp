@@ -8,7 +8,7 @@ int PrefixMatcher::selectRouter(string networkAddress){
         return -1;
     }
 
-    Trie *root = new Trie();
+    Trie *root = getNode();
     Trie *currNode = root;
     string longestMatch = "";
     string sequence = "";
@@ -46,7 +46,7 @@ void PrefixMatcher::insert(string address, int routerNumber){
 
     routers.insert({routerNumber, address});
 
-    Trie *root = new Trie();
+    Trie *root = getNode();
     Trie *currNode = root;
     int index = 0;
 
@@ -59,7 +59,7 @@ void PrefixMatcher::insert(string address, int routerNumber){
         } 
 
         if (currNode->children[indexChild] == nullptr){
-            currNode->children[indexChild] = new Trie();
+            currNode->children[indexChild] = getNode();
         }
 
         currNode = currNode->children[indexChild];
