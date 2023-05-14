@@ -24,11 +24,11 @@ vector<string> Autocomplete::getSuggestions(string partialWord){
 void Autocomplete::insert(string word){
     Trie *root = new Trie();
     Trie *next = root;
-    for (int i = 0; i < word.size(); i++){
-        int index = word[i] - 'a';
-        if (!next->children[index])
+    for (int i = 0; i < word.length(); i++){
+        int index = (int)word[i] - (int)'a';
+        if (!next->children[index]){
             next->children[index] = new Trie();
- 
+        }
         next = next->children[index];
     }
  
