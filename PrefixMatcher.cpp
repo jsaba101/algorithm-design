@@ -55,7 +55,7 @@ void PrefixMatcher::insert(string address, int routerNumber){
 
         if (indexChild < 0 || indexChild >= children.size()){
             cout << "Invalid address" << endl;
-            return;
+            break;
         } 
 
         if (currNode->children[indexChild] == nullptr){
