@@ -3,7 +3,7 @@
 using namespace std;
 
 Trie::Trie(){
-    isEndOfWord;
+    bool isEndOfWord;
     vector<Trie *> children;
 }
 
