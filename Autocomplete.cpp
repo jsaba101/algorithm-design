@@ -5,7 +5,7 @@ using namespace std;
 
 vector<string> Autocomplete::getSuggestions(string partialWord){
     vector<string> suggestions;
-    Trie *root = new Trie();
+    Trie *root = getNode();
     if (root->isEndOfWord){
         cout << partialWord << endl;
     }
@@ -22,12 +22,12 @@ vector<string> Autocomplete::getSuggestions(string partialWord){
 }
 
 void Autocomplete::insert(string word){
-    Trie *root = new Trie();
+    Trie *root = getNode();
     Trie *next = root;
     for (int i = 0; i < word.length(); i++){
         int index = (int)word[i] - (int)'a';
         if (!next->children[index]){
-            next->children[index] = new Trie();
+            next->children[index] = getNode();
         }
         next = next->children[index];
     }
