@@ -7,8 +7,9 @@ using namespace std;
 void Autocomplete::insert(string word){
     Trie *root = getNode();
     Trie *next = root;
+    int index;
     for (int i = 0; i < word.length(); i++){
-        int index = (int)word[i] - (int)'a';
+        index = (int)word[i] - (int)'a';
         if (!next->children[index]){
             next->children[index] = getNode();
         }
