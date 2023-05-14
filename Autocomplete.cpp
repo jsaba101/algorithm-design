@@ -1,25 +1,8 @@
 #include "Autocomplete.h"
 #include <iostream>
+#define ALPHABET 26
 
 using namespace std;
-
-vector<string> Autocomplete::getSuggestions(string partialWord){
-    vector<string> suggestions;
-    Trie *root = getNode();
-    if (root->isEndOfWord){
-        cout << partialWord << endl;
-    }
-
-    for (int i = 0; i < children.size(); i++){
-        if (root->children[i]){
-            char child = 'a' + i;
-            suggestions[i].push_back(child);
-            root->children[i];
-            getSuggestions(partialWord + child);
-        }
-    }
-    return suggestions;
-}
 
 void Autocomplete::insert(string word){
     Trie *root = getNode();
@@ -33,4 +16,32 @@ void Autocomplete::insert(string word){
     }
  
     next->isEndOfWord = true;
+}
+
+vector<string> Autocomplete::getSuggestions(string partialWord){
+    vector<string> suggestions;
+    int index;
+    Trie *root = getNode();
+    Trie *next = root;
+
+    for (int i = 0; i < partialWord.length(); i++){
+        index = (int)partialWord[i] - (int)'a';
+        next = next->children[index];
+    }
+
+    traverse(partialWord, next, suggestions);
+
+    return suggestions;
+}
+
+void Autocomplete::traverse(string partialWord, Trie* next, vector<string> result){
+    if (next->isEndOfWord){
+        result.push_back(partialWord);
+    }
+
+    for (int i = 0; i < ALPHABET; i++){
+        if (next->children[i]){
+            traverse(partialWord + (char)('a' + i), next->children[i], result);
+        }
+    }
 }
