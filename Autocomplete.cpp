@@ -1,15 +1,14 @@
 #include "Autocomplete.h"
 #include <iostream>
-#define ALPHABET 26
 
 using namespace std;
 
 void Autocomplete::insert(string word){
-    Trie* next = root;
-    int index;
+    root = getNode();
+    Trie *next = root;
     for (int i = 0; i < word.length(); i++){
-        index = (int)word.at(i) - (int)'a';
-        if (!next->children.at(i)){
+        int index = word[i] - 'a';
+        if (next->children.at(i) == nullptr){
             next->children.at(i) = getNode();
         }
         next = next->children.at(i);
@@ -34,11 +33,11 @@ vector<string> Autocomplete::getSuggestions(string partialWord){
 }
 
 void Autocomplete::traverse(string partialWord, Trie* next, vector<string> result){
-    if (next->isEndOfWord){
+    if (next->isEndOfWord == true){
         result.push_back(partialWord);
     }
 
-    for (int i = 0; i < ALPHABET; i++){
+    for (int i = 0; i < 26; i++){
         if (next->children.at(i)){
             traverse(partialWord + (char)('a' + i), next->children[i], result);
         }
