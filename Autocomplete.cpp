@@ -27,19 +27,19 @@ vector<string> Autocomplete::getSuggestions(string partialWord){
         next = next->children.at(i);
     }
 
-    traverse(partialWord, next, suggestions);
+    traversal(partialWord, next, suggestions);
 
     return suggestions;
 }
 
-void Autocomplete::traverse(string partialWord, Trie* next, vector<string> result){
+void Autocomplete::traversal(string partialWord, Trie* next, vector<string> result){
     if (next->isEndOfWord == true){
         result.push_back(partialWord);
     }
 
     for (int i = 0; i < 26; i++){
         if (next->children.at(i)){
-            traverse(partialWord + (char)('a' + i), next->children[i], result);
+            traversal(partialWord + (char)('a' + i), next->children[i], result);
         }
     }
 }
