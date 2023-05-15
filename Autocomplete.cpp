@@ -6,13 +6,12 @@ using namespace std;
 
 void Autocomplete::insert(string word){
     Trie* next = root;
-    int index;
     for (int i = 0; i < word.length(); i++){
-        index = (int)word.at(i) - (int)'a';
-        if (!next->children[index]){
-            next->children[index] = getNode();
+        int index = (int)word.at(i) - (int)'a';
+        if (!next->children.at(index)){
+            next->children.at(index) = getNode();
         }
-        next = next->children[index];
+        next = next->children.at(index);
     }
  
     next->isEndOfWord = true;
@@ -25,7 +24,7 @@ vector<string> Autocomplete::getSuggestions(string partialWord){
 
     for (int i = 0; i < partialWord.length(); i++){
         index = (int)partialWord.at(i) - (int)'a';
-        next = next->children[index];
+        next = next->children.at(index);
     }
 
     traverse(partialWord, next, suggestions);
@@ -39,7 +38,7 @@ void Autocomplete::traverse(string partialWord, Trie* next, vector<string> resul
     }
 
     for (int i = 0; i < ALPHABET; i++){
-        if (next->children[i]){
+        if (next->children.at(i)){
             traverse(partialWord + (char)('a' + i), next->children[i], result);
         }
     }
