@@ -12,7 +12,7 @@ Trie* Trie::getNode(){
     newNode->isEndOfWord = false;
     children.reserve(26);
 
-    for (int i = 0; i < children.size(); i++){
+    for (int i = 0; i < children.size() - 1; i++){
         newNode->children.at(i) = nullptr;
     }
     return newNode;
