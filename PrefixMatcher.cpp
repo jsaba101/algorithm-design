@@ -31,7 +31,7 @@ int PrefixMatcher::selectRouter(string networkAddress){
 
     int routerNumber = 0;
     for (int i = 0; i < routers.size(); i++){
-        if (longestMatch == routers.at(i)){
+        if (networkAddress == routers.at(i)){
             routerNumber = i;
             break;
         }
