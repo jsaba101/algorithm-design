@@ -5,11 +5,10 @@
 using namespace std;
 
 void Autocomplete::insert(string word){
-    Trie* root = getNode();
     Trie* next = root;
     int index;
     for (int i = 0; i < word.length(); i++){
-        index = (int)word[i] - (int)'a';
+        index = (int)word.at(i) - (int)'a';
         if (!next->children[index]){
             next->children[index] = getNode();
         }
@@ -22,11 +21,10 @@ void Autocomplete::insert(string word){
 vector<string> Autocomplete::getSuggestions(string partialWord){
     vector<string> suggestions;
     int index;
-    Trie* root = getNode();
     Trie* next = root;
 
     for (int i = 0; i < partialWord.length(); i++){
-        index = (int)partialWord[i] - (int)'a';
+        index = (int)partialWord.at(i) - (int)'a';
         next = next->children[index];
     }
 

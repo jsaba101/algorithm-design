@@ -9,6 +9,7 @@ class Trie{
         std::vector<Trie *> children;
         Trie();
         Trie* getNode();
+        Trie* root;
     public:
         friend class Autocomplete;
         friend class PrefixMatcher;
