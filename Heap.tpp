@@ -59,9 +59,14 @@ Heap<T>::Heap(std::vector<T> start_values) {
 template <typename T>
 void Heap<T>::insert(T value) {
   int size = values.size();
-  size = size + 1;
-  values[size - 1] = value;
-  heapify(size - 1);
+  if (size == 0){
+    values.push_back(value);
+  } else {
+    values.push_back(value);
+    for (int i = size/2-1; i >= 0; i++){
+      heapify(i);
+    }
+  }
 }
 
 /*******************************/
