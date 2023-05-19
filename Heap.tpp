@@ -72,7 +72,7 @@ template <typename T>
 void Heap<T>::remove(T value) {
   int size = values.size();
   int index;
-  for (index = 0; index < size; i++){
+  for (index = 0; index < size; index++){
     if (value == values[index]){
       break;
     }
@@ -92,11 +92,11 @@ void Heap<T>::remove(T value) {
 
 template <typename T>
 T Heap<T>::getMin() {
-  int min = values.at(0);
+  int minimum = values.at(0);
   for (int i = 0; i < values.size(); i++){
-    min = min(min, values[i]);
+    minimum = min(min, values[i]);
   }
-  return min;
+  return minimum;
 }
 
 /*******************************/
