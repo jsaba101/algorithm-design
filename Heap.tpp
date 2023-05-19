@@ -28,7 +28,11 @@ class Heap {
 
 template <typename T>
 Heap<T>::Heap() {
-  values;
+  std::vector<T> values;
+  int size = values.size();
+  for (int i = size/2-1; i>=0; i--){
+    heapify(i);
+  }
 }
 
 /*******************************/
