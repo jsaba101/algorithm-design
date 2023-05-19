@@ -63,7 +63,7 @@ void Heap<T>::insert(T value) {
     values.push_back(value);
   } else {
     values.push_back(value);
-    for (int i = size/2-1; i >= 0; i++){
+    for (int i = size/2-1; i >= 0; i--){
       heapify(i);
     }
   }
