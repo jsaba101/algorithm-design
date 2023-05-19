@@ -77,7 +77,9 @@ void Heap<T>::remove(T value) {
       break;
     }
   }
-  swap(values[index], values[size-1]);
+  temp = values[index];
+  values[index] = values[size-1];
+  values[size-1] = temp;
 
   values.pop_back();
 
@@ -94,7 +96,9 @@ template <typename T>
 T Heap<T>::getMin() {
   int minimum = values.at(0);
   for (int i = 0; i < values.size(); i++){
-    minimum = min(min, values[i]);
+    if (values.at(i) > minimum){
+      minimum = values.at(i);
+    }
   }
   return minimum;
 }
