@@ -77,7 +77,7 @@ void Heap<T>::remove(T value) {
       break;
     }
   }
-  temp = values[index];
+  T temp = values[index];
   values[index] = values[size-1];
   values[size-1] = temp;
 
