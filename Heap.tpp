@@ -29,10 +29,7 @@ class Heap {
 template <typename T>
 Heap<T>::Heap() {
   std::vector<T> values;
-  int size = values.size();
-  for (int i = size/2-1; i>=0; i--){
-    heapify(i);
-  }
+  Heap(values);
 }
 
 /*******************************/
@@ -103,12 +100,15 @@ void Heap<T>::remove(T value) {
 
 template <typename T>
 T Heap<T>::getMin() {
-  int minimum = values.at(0);
-  for (int i = 0; i < values.size(); i++){
-    if (values.at(i) > minimum){
-      minimum = values.at(i);
-    }
+  int size = values.size();
+  if (size <= 0){
+    return 0;
   }
+  int minimum = values.at(0);
+  values.at(0) = values.at(size-1);
+  size = size - 1;
+  heapify(0);
+
   return minimum;
 }
 
