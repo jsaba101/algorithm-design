@@ -29,7 +29,6 @@ class Heap {
 template <typename T>
 Heap<T>::Heap() {
   std::vector<T> start_values;
-  Heap(start_values);
 }
 
 /*******************************/
