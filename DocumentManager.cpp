@@ -30,8 +30,8 @@ bool DocumentManager::borrowDocument(int docid, int patronID){
     int patronID_Check = 0;
 
     for (int i = 0; i < documentList_Size; i++){
-        if (docid == documentList[i].license_limit){
-            doclimit_Check = docid;
+        if (docid == documentList[i].id){
+            doclimit_Check = documentList[i].license_limit;
             break;
         }
     }
