@@ -26,12 +26,12 @@ bool DocumentManager::borrowDocument(int docid, int patronID){
     int documentList_Size = documentList.size();
     int patronIDs_Size = patronIDs.size();
     int newLicense_limit;
-    int docid_Check = 0;
+    int doclimit_Check = 0;
     int patronID_Check = 0;
 
     for (int i = 0; i < documentList_Size; i++){
-        if (docid == documentList[i].id){
-            docid_Check = docid;
+        if (docid == documentList[i].license_limit){
+            doclimit_Check = docid;
             break;
         }
     }
@@ -42,7 +42,7 @@ bool DocumentManager::borrowDocument(int docid, int patronID){
         }
     }
 
-    if (docid_Check == 0 || patronID_Check == 0){
+    if (doclimit_Check == 0 || patronID_Check == 0){
         return false;
     } else {
         borrowed.insert({docid, patronID});
