@@ -26,21 +26,9 @@ bool DocumentManager::borrowDocument(int docid, int patronID){
     int documentList_Size = documentList.size();
     int patronIDs_Size = patronIDs.size();
     int newLicense_limit;
-    int doclimit_Check = 0;
-    int patronID_Check = 0;
 
-    for (int i = 0; i < documentList_Size; i++){
-        if (docid == documentList[i].id){
-            doclimit_Check = documentList[i].license_limit;
-            break;
-        }
-    }
-    for (int i = 0; i < patronIDs_Size; i++){
-        if (patronID == patronIDs[i]){
-            patronID_Check = patronID;
-            break;
-        }
-    }
+    int doclimit_Check = docidSearch(docid, documentList_Size);
+    int patronID_Check = patronIDSearch(patronID, patronIDs_Size);
 
     if (doclimit_Check == 0 || patronID_Check == 0){
         return false;
@@ -70,4 +58,26 @@ void DocumentManager::returnDocument(int docid, int patronID){
             break;
         }
     }
+}
+
+int DocumentManager::docidSearch(int docid, int size){
+    int doclimit = 0;
+    for (int i = 0; i < size; i++){
+        if (docid == documentList[i].id){
+            doclimit = documentList[i].license_limit;
+            break;
+        }
+    }
+    return doclimit;
+}
+
+int DocumentManager::patronIDSearch(int patronID, int size){
+    int isPatronID = 0;
+    for (int i = 0; i < size; i++){
+        if (patronID == patronIDs[i]){
+            isPatronID = patronID;
+            break;
+        }
+    }
+    return isPatronID;
 }

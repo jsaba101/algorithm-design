@@ -15,6 +15,8 @@ class DocumentManager{
         std::vector<Document> documentList;
         std::vector<int> patronIDs;
         std::unordered_map<int, int> borrowed;
+        int docidSearch(int docid, int size);
+        int patronIDSearch(int patronID, int size);
     public:
         void addDocument(std::string name, int id, int license_limit);
         void addPatron(int patronID);
